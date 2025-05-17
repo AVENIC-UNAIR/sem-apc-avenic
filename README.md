@@ -51,15 +51,23 @@ sem-apc-example-project/
    colcon build
    source install/setup.bash
    ```
-2. Restart simulasi dengan `Ctrl+C` lalu:
+2. Kalau abis run node kan ngaco tuh mobilnya kita restart aja simulasi dengan `Ctrl+C` lalu:
    ```bash
    ros2 launch carla_shell_bridge main.launch.py
    ```
-3. Gunakan **RViz** untuk memvisualisasi data:
+4. Buat run launcher node kamu jalankan dengan perintah ini:
+   ```bash
+   ros2 launch shell_simulation nama_launcher_kamu.py
+   ```
+5. Buat run salah satu node kamu jalankan dengan perintah ini:
+   ```bash
+   ros2 run shell_simulation nama_node_kamu.py
+   ```
+5. Gunakan **RViz** untuk memvisualisasi data:
    - Publisher: Node yang mempublikasikan data ke topic.
    - Subscriber: Node yang menerima data dari topic.
    - ROS2 akan otomatis menghubungkan keduanya via topic.
-4. Gunakan GPT (dengan bijak!) buat belajar, debug, dan optimasi code.
+6. Gunakan GPT (dengan bijak!) buat belajar, debug, dan optimasi code.
 
 ---
 
