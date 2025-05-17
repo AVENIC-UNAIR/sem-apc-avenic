@@ -31,7 +31,7 @@ sem-apc-example-project/
 ### ✅ Struktur dan Workflow
 
 - **scripts/**: Tempat semua node Python untuk kontrol kendaraan. Di sinilah kamu ngatur publisher/subscriber.
-- **launch/**: Untuk file `launch.py` yang menjalankan sistem.
+- **launch/**: Untuk file `launch.py` yang menjalankan sistem (jadi sistemnya kaya launcher daripada node yang ada dan yang kamu list disitu).
 - **CMakeLists.txt & package.xml**: Harus selalu diupdate saat nambah node atau dependencies baru.
 - **Non-Used/**: Referensi aja, gak kepakai saat build.
 
