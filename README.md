@@ -85,7 +85,7 @@ source install/setup.bash
 
 ros2 launch carla_shell_bridge main.launch.py
 # Buka terminal baru (jika lokal, cukup buka tab baru)
-ros2 run shell_simulation example_control
+ros2 run shell_simulation example_control.py
 ```
 
 ---
