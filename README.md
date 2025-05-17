@@ -19,42 +19,43 @@ sem-apc-example-project/
 ```
 
 Penjelasan secara garis besar :
-scripts/: Berisi semua node Python untuk sistem kontrol pada mobil (setting topic/publisher/subscriber disini)
-launch/: Berisi file launch untuk menjalankan sistem keseluruhan (buat jalanin node yang udah di tentuin)
-CMakeLists.txt & package.xml: File konfigurasi ROS2 package
+- scripts/: Berisi semua node Python untuk sistem kontrol pada mobil (setting topic/publisher/subscriber disini)
+- launch/: Berisi file launch untuk menjalankan sistem keseluruhan (buat jalanin node yang udah di tentuin)
+- CMakeLists.txt & package.xml: File konfigurasi ROS2 package
 
 Hal-hal yang harus dihindari :
-- Jangan pakai package/depedensi yang emang gada khusus di node yang perlu dijalankan oleh si Shell (kalau buat Training,dll gapapa buat kebutuhan kita aja)
-  *Misalnya klo error Python seperti No module named ..... berarti package itu emang gada dan harus di buat manual (perarturan dari Shell gaboleh soalnya kalo dipaksa nanti pas di run di pihak mereka malah gabisa)*
-- Kalau bisa gunain aja Topics yang udah di list dibawah sama Shell
-- Belum nemu lagi nanti ditambahin!...
+1. Jangan pakai package/depedensi yang emang gada khusus di node yang perlu dijalankan oleh si Shell (kalau buat Training,dll gapapa buat kebutuhan kita aja)
+   Misalnya klo error Python seperti No module named ..... berarti package itu emang gada dan harus di buat manual (perarturan dari Shell gaboleh soalnya kalo dipaksa nanti pas di run di pihak mereka malah gabisa)
+2. Kalau bisa gunain aja Topics yang udah di list dibawah sama Shell
+3. Belum nemu lagi nanti ditambahin!...
 
 Hal yang wajib dilakuin :
-- Saat ubah/tambah node (file di scripts) serta ubah apapun di dalam folder shell_simulation itu wajib jalankan `colcon build` ya! (karena ini penting agar semua script ini bisa di executable oleh ros2 dan disini jga biar dia inisialisasi package yang kamu setting di package.xml)
-- Kalo abis trial error kan mobil suka ngaco tuh jalannya nah kalo mau restart tekan `Ctrl+C` aja di terminal yang run carla_bridge. Kalau udah stop baru run lagi pake `ros2 launch carla_shell_bridge main.launch.py`
-- Gunakan Rviz untuk lihat hasil dari topic/publisher yang kalian buat :
-  Konsep Dasar
-    Publisher (Penerbit)
-        Node yang menghasilkan data
-        Mempublikasikan data ke topic tertentu
-        Tidak peduli siapa yang menerima data
-
-  Subscriber (Pelanggan)
-        Node yang membutuhkan data
-        Berlangganan ke topic tertentu
-        Tidak perlu tahu siapa yang mempublikasikan data
-
-  Topic
-        Saluran komunikasi bernama
-        Bersifat asynchronous (tidak perlu menunggu respons)
-        Menggunakan tipe pesan tertentu (misalnya Float64, String, PoseArray)
-
-  Contoh alur Kerja
-        Node A mendaftar sebagai publisher untuk topic "/throttle_command"
-        Node B mendaftar sebagai subscriber untuk topic "/throttle_command"
-        ROS2 menghubungkan keduanya secara otomatis
-        Saat Node A mempublikasikan data, Node B akan menerima callback
-- Ada GPT gunakan yang baik dan benar (sekalian belajar!) 
+1. Saat ubah/tambah node (file di scripts) serta ubah apapun di dalam folder shell_simulation itu wajib jalankan `colcon build` ya! 
+   (karena ini penting agar semua script ini bisa di executable oleh ros2 dan disini jga biar dia inisialisasi package yang kamu setting di package.xml)
+2. Kalo abis trial error kan mobil suka ngaco tuh jalannya nah kalo mau restart tekan `Ctrl+C` aja di terminal yang run carla_bridge. Kalau udah stop baru run lagi pake `ros2 launch carla_shell_bridge main.launch.py`
+3. Gunakan Rviz untuk lihat hasil dari topic/publisher yang kalian buat :
+   Konsep Dasar
+     Publisher (Penerbit)
+         Node yang menghasilkan data
+         Mempublikasikan data ke topic tertentu
+         Tidak peduli siapa yang menerima data
+ 
+   Subscriber (Pelanggan)
+         Node yang membutuhkan data
+         Berlangganan ke topic tertentu
+         Tidak perlu tahu siapa yang mempublikasikan data
+ 
+   Topic
+         Saluran komunikasi bernama
+         Bersifat asynchronous (tidak perlu menunggu respons)
+         Menggunakan tipe pesan tertentu (misalnya Float64, String, PoseArray)
+ 
+   Contoh alur Kerja
+         Node A mendaftar sebagai publisher untuk topic "/throttle_command"
+         Node B mendaftar sebagai subscriber untuk topic "/throttle_command"
+         ROS2 menghubungkan keduanya secara otomatis
+         Saat Node A mempublikasikan data, Node B akan menerima callback
+4. Ada GPT gunakan yang baik dan benar (sekalian belajar!) 
 
 # Example Project
 
