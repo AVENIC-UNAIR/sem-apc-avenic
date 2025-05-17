@@ -25,7 +25,7 @@ CMakeLists.txt & package.xml: File konfigurasi ROS2 package
 
 Hal-hal yang harus dihindari :
 - Jangan pakai package/depedensi yang emang gada khusus di node yang perlu dijalankan oleh si Shell (kalau buat Training,dll gapapa buat kebutuhan kita aja)
-  Misalnya klo error Python seperti No module named ..... berarti package itu emang gada dan harus di buat manual (perarturan dari Shell gaboleh soalnya kalo dipaksa nanti pas di run di pihak mereka malah gabisa)
+  *Misalnya klo error Python seperti No module named ..... berarti package itu emang gada dan harus di buat manual (perarturan dari Shell gaboleh soalnya kalo dipaksa nanti pas di run di pihak mereka malah gabisa)*
 - Kalau bisa gunain aja Topics yang udah di list dibawah sama Shell
 - Belum nemu lagi nanti ditambahin!...
 
