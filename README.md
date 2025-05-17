@@ -39,6 +39,7 @@ sem-apc-example-project/
 
 1. **Jangan pakai dependency eksternal** yang tidak standar di ROS atau tidak bisa diinstall via `rosdep`.
    - Misal error seperti `No module named ...` artinya package itu gak ada di build environment Shell dan harus dibuang/manual install (yang *tidak boleh*).
+   - Kalau buat training di local/sendiri gapapa asal jangan di panggil saat run node di kode yang akan diupload
 2. **Usahakan gunakan hanya topic ROS2 yang disediakan oleh Shell** (lihat bagian bawah).
 3. Hindari edit sembarangan file `bridge`/`interface` yang disediakan Shell.
 4. Bakal update lagi kalo ada...
